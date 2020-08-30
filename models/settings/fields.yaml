@@ -4,8 +4,9 @@ fields:
         path: $/bauboo/youtube/models/settings/_hint.htm
         type: partial
     api_key:
-        label: 'YouTube API Key'
+        label: Your YouTube API Key
         span: full
         required: 1
         type: text
-        comment: 'Enter your YouTube API Key.'
+        comment: Enter your YouTube API Key.
+        placeholder: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghij789

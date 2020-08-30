@@ -4,9 +4,6 @@ namespace Bauboo\YouTube\Models;
 use Model;
 use October\Rain\Database\Traits\Validation as ValidationTrait;
 
-/**
- * Settings Model
- */
 class Settings extends Model
 {
     use ValidationTrait;
