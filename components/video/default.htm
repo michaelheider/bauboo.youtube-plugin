@@ -1,0 +1,33 @@
+{% set videoId = __SELF__.videoId %}
+{% set playerControls = __SELF__.playerControls %}
+{% set privacyMode = __SELF__.privacyMode %}
+{% set data = __SELF__.data %}
+
+<iframe width="560" height="315"
+	src="https://www.youtube{% if privacyMode %}-nocookie{% endif %}.com/embed/{{videoId}}?controls={{playerControls ? 1 : 0}}"
+	frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<h3>{{ data.title }}</h3>
+<p>by: {{ data.channelTitle }}</p>
+<p>at: {{ data.publishedAt }}</p>
+<blockquote class="blockquote">
+	{{ data.description }}
+</blockquote>
+<h5>Tags:</h5>
+<ul class="list-group">
+	{% for tag in data.tags %}
+	<li class="list-group-item">{{ tag }}</li>
+	{% else %}
+	<li>No tags.</li>
+	{% endfor %}
+</ul>
+<h5>Thumbnails:</h5>
+<ul class="list-group">
+	{% for thumbnail in data.thumbnails %}
+	<li class="list-group-item">
+		<img src="{{ thumbnail.url }}" height="{{ thumbnail.height }}" width="{{ thumbnail.width }}" />
+	</li>
+	{% else %}
+	<li>No thumbnails.</li>
+	{% endfor %}
+</ul>
