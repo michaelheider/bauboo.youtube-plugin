@@ -19,7 +19,7 @@
 <p>at: {{ video.data.publishedAt }}</p>
 
 <blockquote class="blockquote">
-	{{ video.data.description }}
+	{{ video.data.description|raw }}
 </blockquote>
 
 <h5>Tags:</h5>

@@ -94,8 +94,10 @@ class Video extends ComponentBase
     public bool $privacyMode;
     /** See example data at `getData()` method. */
     public array $data;
-    /** Holds error information if an error occurs. */
+    /** Holds error information if an error occurs and the settings ask for it. */
     public string $error;
+    /** Whether an error has occured. */
+    protected bool $hasError = false;
 
     /**
      * {@inheritdoc}
@@ -109,14 +111,19 @@ class Video extends ComponentBase
         $this->height = $this->property('height');
         $this->playerControls = (bool) $this->property('playerControls');
         $this->privacyMode = (bool) $this->property('privacyMode');
-        $this->data = $this->getData();
+        $data = $this->getData();
+        if (!$this->hasError) {
+            $data = $this->convert($data);
+        }
+        $this->data = $data;
     }
 
     /**
      * Fetch data about the YouTube video.
-     * It also sets the `$error` property if an error occurs and the settings allow it. 
+     * It also sets the `$error` property if an error occurs and the settings allow it.
+     *
      * @return array Associative array, see example below.
-     * 
+     *
      * @example // example data, returned as associative array
      * [
      *     "publishedAt" => "2009-10-25T06:57:33Z"
@@ -157,15 +164,26 @@ class Video extends ComponentBase
             if (count($data['items']) > 0) {
                 return $data['items'][0]['snippet'];
             } else {
-                $error = 'No YouTube video with ID \''.$this->videoId.'\'.';
+                $error = 'No YouTube video with ID \''.$this->videoId."'.";
             }
         } else {
             $error = $data['error']['message'];
         }
+        $this->hasError = true;
         if (Settings::get('display_error', false)) {
             $this->error = $error;
         }
-        
+
         return [];
+    }
+
+    /**
+     * Escape all html chars and replace all `\n` with `<br />` in `description`.
+     */
+    protected function convert(array $data): array
+    {
+        $data['description'] = htmlspecialchars($data['description']);
+        $data['description'] = str_replace("\n", '<br />', $data['description']);
+        return $data;
     }
 }

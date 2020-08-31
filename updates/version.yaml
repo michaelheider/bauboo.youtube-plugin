@@ -2,3 +2,5 @@
     - Initialize plugin.
 1.1.0:
     - Release.
+1.1.1:
+    - Replace \n with <br /> in description.
