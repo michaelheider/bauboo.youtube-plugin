@@ -47,8 +47,8 @@ class Video extends ComponentBase
                 'default' => true,
             ],
             'responsive' => [
-                'title' => 'krisawzm.embed::common.properties.responsive.title',
-                'description' => 'krisawzm.embed::common.properties.responsive.description',
+                'title' => 'Responsiveness',
+                'description' => 'Makes the player size fluid. If enabled, ignore fixed sizing.',
                 'default' => '16by9',
                 'type' => 'dropdown',
                 'options' => [
@@ -94,6 +94,8 @@ class Video extends ComponentBase
     public bool $privacyMode;
     /** See example data at `getData()` method. */
     public array $data;
+    /** Holds error information if an error occurs. */
+    public string $error;
 
     /**
      * {@inheritdoc}
@@ -112,8 +114,10 @@ class Video extends ComponentBase
 
     /**
      * Fetch data about the YouTube video.
-     *
-     * @example // example data
+     * It also sets the `$error` property if an error occurs and the settings allow it. 
+     * @return array Associative array, see example below.
+     * 
+     * @example // example data, returned as associative array
      * [
      *     "publishedAt" => "2009-10-25T06:57:33Z"
      *     "channelId" => "UC38IQsAvIsxxjztdMZQtwHA"
@@ -141,13 +145,27 @@ class Video extends ComponentBase
     protected function getData(): array
     {
         $apiKey = Settings::get('api_key', '');
-        $response = file_get_contents('https://www.googleapis.com/youtube/v3/videos?id='.$this->videoId.'&part=snippet&key='.$apiKey);
-        if (false === $response) {
-            return false;
+        $url = 'https://www.googleapis.com/youtube/v3/videos?id='.$this->videoId.'&part=snippet&key='.$apiKey;
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        $data = curl_exec($curl);
+        $st_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+        $data = json_decode($data, true);
+        $error = '';
+        if (200 == $st_code) {
+            if (count($data['items']) > 0) {
+                return $data['items'][0]['snippet'];
+            } else {
+                $error = 'No YouTube video with ID \''.$this->videoId.'\'.';
+            }
         } else {
-            $data = json_decode($response, true);
-
-            return $data['items'][0]['snippet'];
+            $error = $data['error']['message'];
         }
+        if (Settings::get('display_error', false)) {
+            $this->error = $error;
+        }
+        
+        return [];
     }
 }

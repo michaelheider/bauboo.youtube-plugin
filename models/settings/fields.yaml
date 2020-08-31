@@ -10,3 +10,10 @@ fields:
         type: text
         comment: Enter your YouTube API Key.
         placeholder: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghij789
+    display_error:
+        label: Whether errors should be displayed.
+        span: full
+        required: 0
+        type: switch
+        default: true
+        comment: This setting decides wether the default component displays errors. More precisely, it decides whether the property `video.error` will hold an error string.
