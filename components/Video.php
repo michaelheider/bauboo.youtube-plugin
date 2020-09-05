@@ -10,7 +10,7 @@ class Video extends ComponentBase
     /**
      * {@inheritdoc}
      */
-    public function componentDetails()
+    public function componentDetails(): array
     {
         return [
             'name' => 'Video',
@@ -21,7 +21,7 @@ class Video extends ComponentBase
     /**
      * {@inheritdoc}
      */
-    public function defineProperties()
+    public function defineProperties(): array
     {
         $css_units = '%|em|ex|ch|rem|cm|mm|q|in|pt|pc|px|vw|vh|vmin|vmax';
 
@@ -78,31 +78,31 @@ class Video extends ComponentBase
         ];
     }
 
-    /** YouTube video ID. */
-    public string $videoId;
-    /** Whether the video is displayed responsive or fixed size. */
-    public bool $isResponsive;
-    /** If `$isResponsive` is true, this is the aspect ratio. */
-    public string $responsiveRatio;
-    /** Video width, if not responsive. */
-    public string $width;
-    /** Video height, if not responsive. */
-    public string $height;
-    /** Whether player controls are displayed. */
-    public bool $playerControls;
-    /** Whether privacy mode is activated. */
-    public bool $privacyMode;
-    /** See example data at `getData()` method. */
-    public array $data;
-    /** Holds error information if an error occurs and the settings ask for it. */
-    public string $error;
-    /** Whether an error has occured. */
-    protected bool $hasError = false;
+    /** @var string YouTube video ID. */
+    public $videoId;
+    /** @var bool Whether the video is displayed responsive or fixed size. */
+    public $isResponsive;
+    /** @var string If `$isResponsive` is true, this is the aspect ratio. */
+    public $responsiveRatio;
+    /** @var string Video width, if not responsive. */
+    public $width;
+    /** @var string Video height, if not responsive. */
+    public $height;
+    /** @var bool Whether player controls are displayed. */
+    public $playerControls;
+    /** @var bool Whether privacy mode is activated. */
+    public $privacyMode;
+    /** @var array See example data at `getData()` method. */
+    public $data;
+    /** @var string Holds error information if an error occurs and the settings ask for it. */
+    public $error;
+    /** @var bool Whether an error has occured. */
+    protected $hasError = false;
 
     /**
      * {@inheritdoc}
      */
-    public function onRun()
+    public function onRun(): void
     {
         $this->videoId = $this->property('videoId');
         $this->isResponsive = 'not' !== $this->property('responsive');
@@ -184,6 +184,7 @@ class Video extends ComponentBase
     {
         $data['description'] = htmlspecialchars($data['description']);
         $data['description'] = str_replace("\n", '<br />', $data['description']);
+
         return $data;
     }
 }
