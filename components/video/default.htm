@@ -25,20 +25,20 @@
 <h5>Tags:</h5>
 <ul class="list-group">
 	{% for tag in video.data.tags %}
-	<li class="list-group-item">{{ tag }}</li>
+		<li class="list-group-item">{{ tag }}</li>
 	{% else %}
-	<li>No tags.</li>
+		<li>No tags.</li>
 	{% endfor %}
 </ul>
 
 <h5>Thumbnails:</h5>
 <ul class="list-group">
 	{% for thumbnail in video.data.thumbnails %}
-	<li class="list-group-item">
-		<img src="{{ thumbnail.url }}" height="{{ thumbnail.height }}" width="{{ thumbnail.width }}" />
-	</li>
+		<li class="list-group-item">
+			<img src="{{ thumbnail.url }}" height="{{ thumbnail.height }}" width="{{ thumbnail.width }}" />
+		</li>
 	{% else %}
-	<li>No thumbnails.</li>
+		<li>No thumbnails.</li>
 	{% endfor %}
 </ul>
 

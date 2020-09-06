@@ -1,6 +1,6 @@
 plugin:
     name: 'bauboo.youtube::lang.plugin.name'
-    description: 'Embed a YouTube video plus its description and other data.'
+    description: 'bauboo.youtube::lang.plugin.description'
     author: Bauboo
     icon: oc-icon-youtube-play
     homepage: ''

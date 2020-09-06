@@ -6,3 +6,5 @@
     - Replace \n with <br /> in description.
 1.1.2:
     - Downgrade required PHP version to 7.3.x (from 7.4.x).
+1.1.3:
+    - Proper localization.
