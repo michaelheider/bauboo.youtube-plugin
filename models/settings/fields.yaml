@@ -9,7 +9,7 @@ fields:
         required: 1
         type: text
         comment: bauboo.youtube::lang.settings.api_key_comment
-        placeholder: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghij789
+        placeholder: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefgh123_-
     display_error:
         label: bauboo.youtube::lang.settings.display_error_label
         span: full
