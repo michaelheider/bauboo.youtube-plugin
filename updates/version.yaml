@@ -5,3 +5,6 @@
 1.2.1: Proper localization.
 1.2.2: Permission improvements.
 1.2.3: Ready for release.
+1.2.4:
+  - Default markup now uses Bootstrap.
+  - Added documentation.
