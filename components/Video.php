@@ -5,6 +5,7 @@ namespace Bauboo\YouTube\Components;
 use Bauboo\YouTube\Models\Settings;
 use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Lang;
+use October\Rain\Support\Facades\Config;
 
 class Video extends ComponentBase
 {
@@ -157,6 +158,7 @@ class Video extends ComponentBase
         $url = 'https://www.googleapis.com/youtube/v3/videos?id='.$this->videoId.'&part=snippet&key='.$apiKey;
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_REFERER, Config::get('app.url', ''));
         $data = curl_exec($curl);
         $st_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
