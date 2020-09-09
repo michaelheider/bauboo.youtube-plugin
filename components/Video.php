@@ -36,6 +36,7 @@ class Video extends ComponentBase
                 'validationPattern' => '^[A-Za-z0-9_\-]{11}$',
                 'validationMessage' => 'bauboo.youtube::lang.component.videoId.validationMessage',
                 'default' => 'dQw4w9WgXcQ',
+                'required' => true,
             ],
             'playerControls' => [
                 'title' => 'bauboo.youtube::lang.component.playerControls.title',
