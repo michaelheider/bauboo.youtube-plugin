@@ -6,7 +6,7 @@
 1.2.2: Permission improvements.
 1.2.3: Ready for release.
 1.2.4:
-  - Default markup now uses Bootstrap.
-  - Added documentation.
+    - Default markup now uses Bootstrap.
+    - Added documentation.
 1.3.0: Referer set properly, so YouTube API key can be restricted to specific URLs.
 1.3.1: Fix in license file.
