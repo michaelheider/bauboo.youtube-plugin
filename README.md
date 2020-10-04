@@ -27,4 +27,4 @@ Should errors be dispalyed?: The default markup includes a descriptive error mes
 
 If you want to embed just the video, but without additional data, you can fork the component and remove everything except for the `iframe`s. The plugin however still expects the API key, even though embedding videos is possible without.
 
-If you don't want to specify the API key, you can copy and paste the `iframe` manually. See [this](https://support.google.com/youtube/answer/171780). Notice, that you can also specify privacy enhanced mode and wether you want video controls to be displayed.
+If you don't want to specify the API key, you can copy and paste the `iframe` manually. See [this](https://support.google.com/youtube/answer/171780). Notice, that you can also specify privacy enhanced mode and whether you want video controls to be displayed.
