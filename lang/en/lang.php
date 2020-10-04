@@ -15,17 +15,17 @@ return [
 		'api_key_label' => 'Your YouTube API Key',
 		'api_key_comment' => 'Enter your YouTube API Key.',
 		'display_error_label' => 'Should errors be displayed?',
-		'display_error_comment' => 'This setting decides wether the default component displays errors. More precisely, it decides whether the property `video.error` will hold an error string.',
+		'display_error_comment' => 'This setting decides whether the default component displays errors. More precisely, it determines whether the property `video.error` holds an error string.',
 	],
 	'permissions' => [
 		'label' => 'Manage YouTube settings.',
 	],
 	'component' => [
 		'name' => 'YouTube Video',
-		'description' => 'Embed a YouTube video.',
+		'description' => 'Embed a YouTube video plus its description.',
 		'videoId' => [
 			'title' => 'Video ID',
-			'description' => 'The id of the YouTube video. This is the part at the end of the link: https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+			'description' => 'The ID of the YouTube video. This is the part at the end of the link: https://www.youtube.com/watch?v=dQw4w9WgXcQ',
 			'validationMessage' => 'Not a valid YouTube video ID.',
 		],
 		'playerControls' => [
