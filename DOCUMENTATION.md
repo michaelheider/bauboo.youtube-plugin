@@ -31,9 +31,15 @@ Getting an API key is free, however it you get only 100'000 points a day, and on
 
 If you restrict your API key to specific URLs, make sure your `app.url` setting is correct and your website's URL is whitelisted in the API restrictions. The plugin will set the `app.url`'s value as the `referer` header, which Google uses.
 
+## Languages
+
+- English
+- German
+- Slovene, Thanks [Haedaki](https://github.com/Haedaki)!
+
 ## TODO
 
-Feel free to help.
+Feel free to help with translations
 
 ### Out Of Scope for Me
 
