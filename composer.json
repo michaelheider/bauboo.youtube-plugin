@@ -1,0 +1,17 @@
+{
+	"name": "bauboo/youtube-plugin",
+	"type": "october-plugin",
+	"description": "Embed a YouTube video with additional data such as its description.",
+	"keywords": [
+		"october",
+		"octobercms",
+		"youtube",
+		"video"
+	],
+	"license": "MIT",
+	"require": {
+        "php": ">=7.0",
+		"composer/installers": "~1.0"
+	},
+	"minimum-stability": "dev"
+}

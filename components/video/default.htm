@@ -7,15 +7,15 @@
 		<div class='col-md-6 mb-2'>
 			{% if video.isResponsive %}
 				<div class='embed-responsive embed-responsive-{{ video.responsiveRatio }}'>
-					<iframe class='embed-responsive-item'
+					<iframe class='embed-responsive-item' title="YouTube video player"
 						src='https://www.youtube{% if video.privacyMode %}-nocookie{% endif %}.com/embed/{{video.videoId}}?controls={{video.playerControls ? 1 : 0}}'
-						allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen>
+						allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen>
 					</iframe>
 				</div>
 			{% else %}
-				<iframe width='{{ video.width }}' height='{{ video.height }}' frameborder='0'
+				<iframe width='{{ video.width }}' height='{{ video.height }}' title="YouTube video player" style="border: none;"
 					src='https://www.youtube{% if video.privacyMode %}-nocookie{% endif %}.com/embed/{{video.videoId}}?controls={{video.playerControls ? 1 : 0}}'
-					allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen>
+					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen>
 				</iframe>
 			{% endif %}
 			{% if video.error %}
@@ -31,7 +31,9 @@
 	</div>
 </div>
 
-<!-- 
+
+<!-- Other avaiable meta data -->
+<!--
 <h5>Tags:</h5>
 <ul class='list-group'>
 	{% for tag in video.data.tags %}
