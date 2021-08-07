@@ -53,14 +53,14 @@ class Video extends ComponentBase
 			'responsive' => [
 				'title' => 'bauboo.youtube::lang.component.responsive.title',
 				'description' => 'bauboo.youtube::lang.component.responsive.description',
-				'default' => '16by9',
+				'default' => '16x9',
 				'type' => 'dropdown',
 				'options' => [
 					'not' => 'bauboo.youtube::lang.component.responsive.options.not',
-					'1by1' => 'bauboo.youtube::lang.component.responsive.options.1by1',
-					'4by3' => 'bauboo.youtube::lang.component.responsive.options.4by3',
-					'16by9' => 'bauboo.youtube::lang.component.responsive.options.16by9',
-					'21by9' => 'bauboo.youtube::lang.component.responsive.options.21by9',
+					'1x1' => 'bauboo.youtube::lang.component.responsive.options.1x1',
+					'4x3' => 'bauboo.youtube::lang.component.responsive.options.4x3',
+					'16x9' => 'bauboo.youtube::lang.component.responsive.options.16x9',
+					'21x9' => 'bauboo.youtube::lang.component.responsive.options.21x9',
 				],
 			],
 			'width' => [
@@ -82,6 +82,8 @@ class Video extends ComponentBase
 		];
 	}
 
+	/** @var bool True means Bootstrap 5.x, false means Bootstrap 4.x. */
+	public $bootstrap5 = false;
 	/** @var bool Whether an error has occured. */
 	protected $hasError = false;
 	/** @var string YouTube video ID. */
@@ -108,9 +110,14 @@ class Video extends ComponentBase
 	 */
 	public function onRun(): void
 	{
+		$this->bootstrap5 = Settings::get('is_bootstrap_5', '');
+
 		$this->videoId = $this->property('videoId');
 		$this->isResponsive = 'not' !== $this->property('responsive');
-		$this->responsiveRatio = $this->property('responsive');
+		$responsiveRatio = $this->property('responsive');
+		// First transformation needed for backwards compatibility.
+		// Old videos still have '16x9' stored as value. TODO: drop support for this eventually.
+		$this->responsiveRatio = $this->bootstrap5 ? str_replace('by', 'x', $responsiveRatio) : str_replace('x', 'by', $responsiveRatio);
 		$this->width = $this->property('width');
 		$this->height = $this->property('height');
 		$this->playerControls = (bool) $this->property('playerControls');
@@ -123,7 +130,7 @@ class Video extends ComponentBase
 	}
 
 	/**
-	 * Fetch data about the YouTube video.
+	 * Fetch data about the YouTube video from YouTube API.
 	 * It also sets the `$error` property if an error occurs and the settings allow it.
 	 *
 	 * @return array Associative array, see example below.

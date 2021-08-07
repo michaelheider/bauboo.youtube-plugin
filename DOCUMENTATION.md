@@ -25,6 +25,12 @@ If an error occurs while fetching the meta data, e.g. an incorrect API key, then
 - If the settings allow it, an error message is shown on the page.
 - All meta data strings default to an empty string.
 
+## Settings
+
+- YouTube API Key: Specify the YouTube API key.
+- Display Errors?: This setting decides whether the default component displays errors. More precisely, it determines whether the property `video.error` holds an error string.
+- Bootstrap Version: Choose true if you use Bootstrap 5.x. Choose false if you use Bootstrap 4.x. This setting makes sure that the correct CSS classes are added to the default component. Additionally, the `responsiveRatio` property is fromatted like 16x9 in Bootstrap 5.x mode, but 16by9 in Bootstrap 4.x mode. This is also to ensure the correct CSS classes are added.
+
 ## YouTube API Key Remarks
 
 Getting an API key is free, however it you get only 100'000 points a day, and one request costs 1 point. So since we are not caching, it costs one point per video per website access. However, 100'000 points should be sufficient for most users.

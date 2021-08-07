@@ -14,8 +14,10 @@ return [
 		'hint_link_text' => 'Informationen',
 		'api_key_label' => 'Ihr YouTube API Schlüssel',
 		'api_key_comment' => 'Geben Sie Ihren YouTube API Schlüssel ein.',
-		'display_error_label' => 'Sollen Fehler angezeigt werden?',
-		'display_error_comment' => 'Diese Option bestimmt, ob die standard Komponente Fehler anzeigen soll. Genauer gesagt, bestimmt sie, ob die Eigenschaft `video.error` einen Fehlertext enthält.',
+		'display_error_label' => 'Fehler anzeigen?',
+		'display_error_comment' => 'Diese Option bestimmt, ob die Standard-Komponente Fehler anzeigen soll.',
+		'is_bootstrap_5' => 'Bootstrap Version',
+		'is_bootstrap_5_comment' => 'Aktivieren, falls Sie Bootstrap 5.x verwenden. Deaktivieren, falls Sie Bootstrap 4.x verwenden.',
 	],
 	'permissions' => [
 		'label' => 'YouTube Einstellungen bearbeiten.',
@@ -41,10 +43,10 @@ return [
 			'description' => 'Die Videoplayergrösse ist variabel und passt sich der Website an. Falls aktiviert wird die fixe Grösse ignoriert.',
 			'options' => [
 				'not' => 'fixe Grösse',
-				'1by1' => '1 × 1',
-				'4by3' => '4 × 3',
-				'16by9' => '16 × 9',
-				'21by9' => '21 × 9',
+				'1x1' => '1 × 1',
+				'4x3' => '4 × 3',
+				'16x9' => '16 × 9',
+				'21x9' => '21 × 9',
 			],
 		],
 		'width' => [
