@@ -14,8 +14,10 @@ return [
 		'hint_link_text' => 'How to',
 		'api_key_label' => 'Your YouTube API Key',
 		'api_key_comment' => 'Enter your YouTube API Key.',
-		'display_error_label' => 'Should errors be displayed?',
-		'display_error_comment' => 'This setting decides whether the default component displays errors. More precisely, it determines whether the property `video.error` holds an error string.',
+		'display_error_label' => 'Display errors?',
+		'display_error_comment' => 'This setting decides whether the default component displays errors.',
+		'is_bootstrap_5' => 'Bootstrap Version',
+		'is_bootstrap_5_comment' => 'Choose true if you use Bootstrap 5.x. Choose false if you use Bootstrap 4.x.',
 	],
 	'permissions' => [
 		'label' => 'Manage YouTube settings.',
@@ -41,10 +43,10 @@ return [
 			'description' => 'Makes the player size fluid. If enabled, ignore fixed sizing.',
 			'options' => [
 				'not' => 'fixed',
-				'1by1' => '1 by 1',
-				'4by3' => '4 by 3',
-				'16by9' => '16 by 9',
-				'21by9' => '21 by 9',
+				'1x1' => '1 × 1',
+				'4x3' => '4 × 3',
+				'16x9' => '16 × 9',
+				'21x9' => '21 × 9',
 			],
 		],
 		'width' => [

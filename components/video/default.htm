@@ -6,8 +6,9 @@
 	<div class='row mb-3'>
 		<div class='col-md-6 mb-2'>
 			{% if video.isResponsive %}
-				<div class='embed-responsive embed-responsive-{{ video.responsiveRatio }}'>
-					<iframe class='embed-responsive-item' title="YouTube video player"
+				{% if video.bootstrap5 %}<div class='ratio ratio-{{ video.responsiveRatio }}'>{% endif %}
+				{% if not video.bootstrap5 %}<div class='embed-responsive embed-responsive-{{ video.responsiveRatio }}'>{% endif %}
+					<iframe {% if not video.bootstrap5 %}class='embed-responsive-item'{% endif %} title="YouTube video player"
 						src='https://www.youtube{% if video.privacyMode %}-nocookie{% endif %}.com/embed/{{video.videoId}}?controls={{video.playerControls ? 1 : 0}}'
 						allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen>
 					</iframe>

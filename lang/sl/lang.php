@@ -15,7 +15,10 @@ return [
 		'api_key_label' => 'Tvoj YouTube API ključ',
 		'api_key_comment' => 'Vnesi tvoj YouTube API Ključ.',
 		'display_error_label' => 'Prikaži napake?',
-		'display_error_comment' => 'Ta nastavitev določi ali bodo napake prikazane. Bolj natančno, ta nastavitev odloči, če bo lastnost `video.error` prikazovala opis napake.',
+		'display_error_comment' => 'Ta nastavitev določi ali bodo napake prikazane.',
+		// TODO
+		// 'is_bootstrap_5' => 'Bootstrap Version',
+		// 'is_bootstrap_5_comment' => 'Choose true if you use Bootstrap 5.x. Choose false if you use Bootstrap 4.x.',
 	],
 	'permissions' => [
 		'label' => 'Upravljaj z YouTube nastavitvami.',
@@ -41,10 +44,10 @@ return [
 			'description' => 'Omogoči, da se velikost predvajalnika spreminja glede na velikost zaslona. Če je omogočeno, se vrednost dimenzij vnešena v nastavitvah ne upošteva.',
 			'options' => [
 				'not' => 'določena velikost',
-				'1by1' => '1 : 1',
-				'4by3' => '4 : 3',
-				'16by9' => '16 : 9',
-				'21by9' => '21 : 9',
+				'1x1' => '1 : 1',
+				'4x3' => '4 : 3',
+				'16x9' => '16 : 9',
+				'21x9' => '21 : 9',
 			],
 		],
 		'width' => [
