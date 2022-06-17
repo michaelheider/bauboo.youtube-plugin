@@ -5,9 +5,9 @@
 1.2.1: Proper localization.
 1.2.2: Permission improvements.
 1.2.3: Ready for release.
-1.2.4:
-    - Default markup now uses Bootstrap.
-    - Added documentation.
+1.2.4: |
+  Default markup now uses Bootstrap.
+  Added documentation.
 1.3.0: Referer set properly, so YouTube API key can be restricted to specific URLs.
 1.3.1: Fix in license file. This unfortunately required a rebase.
 1.3.2: Minor code improvements.
@@ -15,3 +15,4 @@
 1.4.0: Add composer.json for compatibility with OctoberCMS 2.
 1.4.1: Update YouTube iframe.
 1.5.0: Bootstrap 5.x support.
+1.5.1: Fix minimum PHP version requirement.
