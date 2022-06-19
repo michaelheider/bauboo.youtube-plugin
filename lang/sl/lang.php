@@ -15,10 +15,9 @@ return [
 		'api_key_label' => 'Tvoj YouTube API ključ',
 		'api_key_comment' => 'Vnesi tvoj YouTube API Ključ.',
 		'display_error_label' => 'Prikaži napake?',
-		'display_error_comment' => 'Ta nastavitev določi ali bodo napake prikazane.', // TODO: update this
-		// TODO
-		// 'is_bootstrap_5' => 'Bootstrap Version',
-		// 'is_bootstrap_5_comment' => 'Choose true if you use Bootstrap 5.x. Choose false if you use Bootstrap 4.x. WARNING: OctoberCMS 3 is using Bootstrap 5.',
+		'display_error_comment' => 'Spremenljivka `video.error` vsebuje sporočilo o napaki, če je prišlo do napake. Če je onemogočena, je spremenljivka prazna. Priporočljivo je, da jo uporabljate le za testne namene. Primer: Če je omogočeno, privzeta komponenta prikaže napake, sicer se ne prikažejo.',  // DeepL
+		'is_bootstrap_5' => 'Različica Bootstrap', // DeepL
+		'is_bootstrap_5_comment' => 'Izberite true, če uporabljate Bootstrap 5.x. Izberite false, če uporabljate Bootstrap 4.x. OPOZORILO: OctoberCMS 3 uporablja Bootstrap 5.', // DeepL
 	],
 	'permissions' => [
 		'label' => 'Upravljaj z YouTube nastavitvami.',

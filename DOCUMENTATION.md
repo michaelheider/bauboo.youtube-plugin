@@ -41,7 +41,7 @@ If you restrict your API key to specific URLs, make sure your `app.url` setting 
 
 - English
 - German
-- Slovene, Thanks [Haedaki](https://github.com/Haedaki)!
+- Slovenian, Thanks [Haedaki](https://github.com/Haedaki)!
 
 ## TODO
 
