@@ -15,4 +15,7 @@
 1.4.0: Add composer.json for compatibility with OctoberCMS 2.
 1.4.1: Update YouTube iframe.
 1.5.0: Bootstrap 5.x support.
-1.5.1: Fix minimum PHP version requirement.
+1.5.1: |
+  Fix min PHP requirement.
+  Specify OctoberCMS versions.
+  Setting descriptions improvements.
