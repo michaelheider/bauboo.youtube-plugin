@@ -15,7 +15,7 @@ return [
 		'api_key_label' => 'Tvoj YouTube API ključ',
 		'api_key_comment' => 'Vnesi tvoj YouTube API Ključ.',
 		'display_error_label' => 'Prikaži napake?',
-		'display_error_comment' => 'Ta nastavitev določi ali bodo napake prikazane.',
+		'display_error_comment' => 'Ta nastavitev določi ali bodo napake prikazane.', // TODO: update this
 		// TODO
 		// 'is_bootstrap_5' => 'Bootstrap Version',
 		// 'is_bootstrap_5_comment' => 'Choose true if you use Bootstrap 5.x. Choose false if you use Bootstrap 4.x.',
