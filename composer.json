@@ -6,7 +6,9 @@
 		"october",
 		"octobercms",
 		"youtube",
-		"video"
+		"video",
+		"embed video",
+		"video description"
 	],
 	"license": "MIT",
 	"require": {
