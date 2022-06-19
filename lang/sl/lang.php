@@ -18,7 +18,7 @@ return [
 		'display_error_comment' => 'Ta nastavitev določi ali bodo napake prikazane.', // TODO: update this
 		// TODO
 		// 'is_bootstrap_5' => 'Bootstrap Version',
-		// 'is_bootstrap_5_comment' => 'Choose true if you use Bootstrap 5.x. Choose false if you use Bootstrap 4.x.',
+		// 'is_bootstrap_5_comment' => 'Choose true if you use Bootstrap 5.x. Choose false if you use Bootstrap 4.x. WARNING: OctoberCMS 3 is using Bootstrap 5.',
 	],
 	'permissions' => [
 		'label' => 'Upravljaj z YouTube nastavitvami.',

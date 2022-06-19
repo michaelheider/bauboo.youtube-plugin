@@ -17,7 +17,7 @@ return [
 		'display_error_label' => 'Display errors?',
 		'display_error_comment' => 'The `video.error` variable contains the error message if there is an error. If disabled, the variable remains empty. It is recommended to only use this for testing purposes. Example: If enabled, the default component displays errors, else they are not shown.',
 		'is_bootstrap_5' => 'Bootstrap Version',
-		'is_bootstrap_5_comment' => 'Choose true if you use Bootstrap 5.x. Choose false if you use Bootstrap 4.x.',
+		'is_bootstrap_5_comment' => 'Choose true if you use Bootstrap 5.x. Choose false if you use Bootstrap 4.x. WARNING: OctoberCMS 3 is using Bootstrap 5.',
 	],
 	'permissions' => [
 		'label' => 'Manage YouTube settings.',
