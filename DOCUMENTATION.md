@@ -50,3 +50,17 @@ Feel free to help with translations
 ### Out Of Scope for Me
 
 - cache video meta data
+
+## Q&A
+
+_Q: Does this plugin support YouTube live streams?_
+
+_A_: Yes. It works just like on YouTube itself, meaning that before the live stream starts, a static image and the time until it starts are displayed.
+
+_Q: How does the privacy-enhanced mode work?_
+
+_A_: The privacy-enhanced mode is supported directly by YouTube. YouTube describes this feature as follows: "When you turn on privacy-enhanced mode, YouTube won't store information about visitors on your website unless they play the video." This makes it GDPR compliant (as far as I know, I am not a lawyer).
+
+_Q: I still see a cookie from YouTube before I start the video._
+
+_A_: There is one cookie for the domain ".youtube-nocookie.com" (the domain used for embedded videos with privacy-enhanced mode). Name: CONSENT, Value: PENDING+XXX where XXX is a seemingly random three-digit integer. I do not know what it is for.
